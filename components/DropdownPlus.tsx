@@ -1,7 +1,7 @@
-import { Ionicons } from '@expo/vector-icons';
-import { useRouter } from 'expo-router';
-import { TouchableOpacity } from 'react-native';
-import * as DropdownMenu from 'zeego/dropdown-menu';
+import { Ionicons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
+import { TouchableOpacity } from "react-native";
+import * as DropdownMenu from "zeego/dropdown-menu";
 
 const DropdownPlus = () => {
   const router = useRouter();
@@ -10,7 +10,7 @@ const DropdownPlus = () => {
     <DropdownMenu.Root>
       <DropdownMenu.Trigger>
         <TouchableOpacity>
-          <Ionicons name="add" size={32} color={'#fff'} />
+          <Ionicons name="add" size={32} color={"#000"} />
         </TouchableOpacity>
       </DropdownMenu.Trigger>
 
@@ -18,11 +18,13 @@ const DropdownPlus = () => {
         <DropdownMenu.Group>
           <DropdownMenu.Item
             key="board"
-            onSelect={() => router.push('(authenticated)/(tabs)/boards/new-board')}>
+            onSelect={() =>
+              router.push("(authenticated)/(tabs)/boards/new-board")
+            }>
             <DropdownMenu.ItemTitle>Create a board</DropdownMenu.ItemTitle>
             <DropdownMenu.ItemIcon
               ios={{
-                name: 'square.split.2x1',
+                name: "square.split.2x1",
                 pointSize: 24,
               }}></DropdownMenu.ItemIcon>
           </DropdownMenu.Item>
@@ -31,7 +33,7 @@ const DropdownPlus = () => {
             <DropdownMenu.ItemTitle>Create a card</DropdownMenu.ItemTitle>
             <DropdownMenu.ItemIcon
               ios={{
-                name: 'square.topthird.inset.filled',
+                name: "square.topthird.inset.filled",
                 pointSize: 24,
               }}></DropdownMenu.ItemIcon>
           </DropdownMenu.Item>
@@ -39,11 +41,13 @@ const DropdownPlus = () => {
 
         <DropdownMenu.Item
           key="templates"
-          onSelect={() => router.push('(authenticated)/(tabs)/boards/templates')}>
+          onSelect={() =>
+            router.push("(authenticated)/(tabs)/boards/templates")
+          }>
           <DropdownMenu.ItemTitle>Browse Templates</DropdownMenu.ItemTitle>
           <DropdownMenu.ItemIcon
             ios={{
-              name: 'square.on.square.dashed',
+              name: "square.on.square.dashed",
               pointSize: 24,
             }}></DropdownMenu.ItemIcon>
         </DropdownMenu.Item>
