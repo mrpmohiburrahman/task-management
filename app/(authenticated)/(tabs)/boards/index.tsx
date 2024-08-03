@@ -76,10 +76,17 @@ const Page = () => {
             /> */}
             <Text style={{ fontSize: 16 }}>{item.title}</Text>
             <View style={{ flexDirection: "row" }}>
-              {[0, 1, 2].map(() => (
+              {[0, 1, 2].map((_, index) => (
                 <Image
                   source={{ uri: item.memberInfo[0].avatar_url }}
-                  style={{ height: 30, width: 30, borderRadius: 50 }}
+                  style={[
+                    {
+                      height: 30,
+                      width: 30,
+                      borderRadius: 50,
+                    },
+                    index < 2 && { marginRight: -15 },
+                  ]}
                 />
               ))}
             </View>
@@ -127,12 +134,26 @@ const Page = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: "#fff",
+        paddingTop: 20,
+      }}>
       <Stack.Screen
         options={{
           headerRight: () => <DropdownPlus />,
         }}
       />
+      <View
+        style={{
+          paddingHorizontal: 30,
+          flexDirection: "row",
+          justifyContent: "space-between",
+        }}>
+        <Text>Favourite</Text>
+        <Text>show all</Text>
+      </View>
       <FlatList
         contentContainerStyle={
           boards.length > 0 && {
@@ -157,7 +178,6 @@ const Page = () => {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 16,
     flex: 1,
     backgroundColor: "#fff",
   },
