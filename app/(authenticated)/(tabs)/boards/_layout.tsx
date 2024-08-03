@@ -1,3 +1,4 @@
+import { fonts } from "@/constants/Fonts";
 import { Ionicons } from "@expo/vector-icons";
 import { Stack, useRouter } from "expo-router";
 import { Image, Text, TouchableOpacity, View } from "react-native";
@@ -37,7 +38,13 @@ const Layout = () => {
                   }}
                   source={require("@/assets/images/task-management-blue.png")}
                 />
-                <Text style={{ fontWeight: "500" }}>Boards</Text>
+                <Text
+                  style={{
+                    fontWeight: "500",
+                    fontFamily: fonts.Roboto_500Medium,
+                  }}>
+                  Boards
+                </Text>
               </View>
             </View>
           ),

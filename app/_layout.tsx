@@ -8,6 +8,21 @@ import { useEffect } from "react";
 import { View, ActivityIndicator } from "react-native";
 import { Colors } from "@/constants/Colors";
 import { SupabaseProvider } from "@/context/SupabaseContext";
+import {
+  useFonts,
+  Roboto_100Thin,
+  Roboto_100Thin_Italic,
+  Roboto_300Light,
+  Roboto_300Light_Italic,
+  Roboto_400Regular,
+  Roboto_400Regular_Italic,
+  Roboto_500Medium,
+  Roboto_500Medium_Italic,
+  Roboto_700Bold,
+  Roboto_700Bold_Italic,
+  Roboto_900Black,
+  Roboto_900Black_Italic,
+} from "@expo-google-fonts/roboto";
 
 const CLERK_PUBLISHABLE_KEY = process.env
   .EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY as string;
@@ -47,7 +62,25 @@ const InitialLayout = () => {
     }
   }, [isSignedIn]);
 
-  if (!isLoaded) {
+  let [fontsLoaded] = useFonts({
+    Roboto_100Thin,
+    Roboto_100Thin_Italic,
+    Roboto_300Light,
+    Roboto_300Light_Italic,
+    Roboto_400Regular,
+    Roboto_400Regular_Italic,
+    Roboto_500Medium,
+    Roboto_500Medium_Italic,
+    Roboto_700Bold,
+    Roboto_700Bold_Italic,
+    Roboto_900Black,
+    Roboto_900Black_Italic,
+  });
+
+  // if (!fontsLoaded) {
+  //   return null;
+  // }
+  if (!isLoaded && !fontsLoaded) {
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
         <ActivityIndicator size="large" color={Colors.primary} />
