@@ -1,18 +1,18 @@
-import { Colors } from '@/constants/Colors';
-import { useRouter } from 'expo-router';
-import { useState } from 'react';
-import { View, TouchableOpacity } from 'react-native';
+import { Colors } from "@/constants/Colors";
+import { useRouter } from "expo-router";
+import { useState } from "react";
+import { View, TouchableOpacity } from "react-native";
 
 const COLORS = [
-  '#0079bf',
-  '#d29034',
-  '#519839',
-  '#b04632',
-  '#89609e',
-  '#cd5a91',
-  '#4bbf6b',
-  '#00aecc',
-  '#838c91',
+  "#987D9A",
+  "#FFC96F",
+  "#BFF6C3",
+  "#FFC6C6",
+  "#89609e",
+  "#cd5a91",
+  "#4bbf6b",
+  "#AAD7D9",
+  "#BED7DC",
 ];
 export const DEFAULT_COLOR = COLORS[0];
 
@@ -26,7 +26,13 @@ const Page = () => {
   };
 
   return (
-    <View style={{ flexDirection: 'row', flexGrow: 1, flexWrap: 'wrap', justifyContent: 'center' }}>
+    <View
+      style={{
+        flexDirection: "row",
+        flexGrow: 1,
+        flexWrap: "wrap",
+        justifyContent: "center",
+      }}>
       {COLORS.map((color) => (
         <TouchableOpacity
           key={color}
@@ -36,7 +42,7 @@ const Page = () => {
             width: 100,
             margin: 5,
             borderRadius: 4,
-            borderWidth: selected === color ? 2 : 0,
+            borderWidth: selected === color ? 1 : 0,
             borderColor: Colors.fontDark,
           }}
           onPress={() => onColorSelect(color)}

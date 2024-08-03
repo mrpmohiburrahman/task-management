@@ -1,13 +1,23 @@
-import DropdownPlus from '@/components/DropdownPlus';
-import { Colors } from '@/constants/Colors';
-import { useSupabase } from '@/context/SupabaseContext';
-import { Board } from '@/types/enums';
-import { Link, Stack, useFocusEffect } from 'expo-router';
-import { useCallback, useState } from 'react';
-import { View, Text, TouchableOpacity, FlatList, StyleSheet, RefreshControl } from 'react-native';
+import DropdownPlus from "@/components/DropdownPlus";
+import { Colors } from "@/constants/Colors";
+import { useSupabase } from "@/context/SupabaseContext";
+import { Board } from "@/types/enums";
+import { MaterialIcons } from "@expo/vector-icons";
+import { WINDOW_HEIGHT } from "@gorhom/bottom-sheet";
+import { Link, Stack, useFocusEffect } from "expo-router";
+import { useCallback, useState } from "react";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  FlatList,
+  StyleSheet,
+  RefreshControl,
+  Image,
+} from "react-native";
 
 const Page = () => {
-  const { getBoards } = useSupabase();
+  const { getBoards, getBoardMember } = useSupabase();
   const [boards, setBoards] = useState<Board[]>([]);
   const [refreshing, setRefreshing] = useState(false);
 
@@ -19,21 +29,102 @@ const Page = () => {
 
   const loadBoards = async () => {
     const data = await getBoards!();
-    setBoards(data);
-  };
+    const dataWithMemberInfo = await Promise.all(
+      data.map(async (item: any) => {
+        const memberInfo = await getBoardMember!(item.id);
+        return {
+          ...item,
+          memberInfo,
+        };
+      })
+    );
 
-  const ListItem = ({ item }: { item: Board }) => (
-    <Link
-      href={`/(authenticated)/board/${item.id}?bg=${encodeURIComponent(item.background)}`}
-      style={styles.listItem}
-      key={`${item.id}`}
-      asChild>
-      <TouchableOpacity>
-        <View style={[styles.colorBlock, { backgroundColor: item.background }]} />
-        <Text style={{ fontSize: 16 }}>{item.title}</Text>
-      </TouchableOpacity>
-    </Link>
-  );
+    setBoards(dataWithMemberInfo);
+  };
+  const ListItem = ({ item }: { item: Board }) => {
+    console.log(`🚀 ~ ListItem ~ item:`, item.background);
+    return (
+      <Link
+        href={`/(authenticated)/board/${item.id}?bg=${encodeURIComponent(
+          item.background
+        )}`}
+        style={{
+          borderRadius: 16,
+          // backgroundColor: "#FFC6C6",
+          backgroundColor: item.background, //"#E6FCFF",
+          // borderWidth: 1,
+          gap: 10,
+
+          width: 300,
+        }}
+        key={`${item.id}`}
+        asChild>
+        <TouchableOpacity style={{ justifyContent: "space-between" }}>
+          <View
+            style={{
+              paddingHorizontal: 20,
+              paddingTop: 10,
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}>
+            {/* <View
+              style={[
+                { width: 30, height: 30, borderRadius: 4 },
+                { backgroundColor: item.background },
+              ]}
+            /> */}
+            <Text style={{ fontSize: 16 }}>{item.title}</Text>
+            <View style={{ flexDirection: "row" }}>
+              {[0, 1, 2].map(() => (
+                <Image
+                  source={{ uri: item.memberInfo[0].avatar_url }}
+                  style={{ height: 30, width: 30, borderRadius: 50 }}
+                />
+              ))}
+            </View>
+          </View>
+          {/* Bottom Section */}
+          <View
+            style={{
+              padding: 10,
+            }}>
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                gap: 4,
+                paddingBottom: "10%",
+                paddingLeft: 10,
+              }}>
+              <MaterialIcons name="people-alt" size={20} color={"#cccccc"} />
+              <Text style={{ color: Colors.text_muted }}>Workspaces 1</Text>
+            </View>
+            <View
+              style={{
+                flexDirection: "row",
+                borderTopWidth: StyleSheet.hairlineWidth,
+                borderColor: "#CCCCCC",
+                paddingHorizontal: 10,
+              }}>
+              <View style={{ width: "50%" }}>
+                <Text style={{ color: Colors.text_muted }}>6 Lsits</Text>
+              </View>
+              <View
+                style={{
+                  borderWidth: StyleSheet.hairlineWidth,
+                  borderColor: "#CCCCCC",
+                }}
+              />
+              <View style={{ width: "50%", alignItems: "flex-end" }}>
+                <Text style={{ color: Colors.text_muted }}>30 Cards</Text>
+              </View>
+            </View>
+          </View>
+        </TouchableOpacity>
+      </Link>
+    );
+  };
 
   return (
     <View style={styles.container}>
@@ -43,20 +134,22 @@ const Page = () => {
         }}
       />
       <FlatList
-        contentContainerStyle={boards.length > 0 && styles.list}
+        contentContainerStyle={
+          boards.length > 0 && {
+            // borderWidth: 1,
+            paddingLeft: 30,
+            height: WINDOW_HEIGHT * 0.2,
+            backgroundColor: "#fff",
+          }
+        }
         data={boards}
         keyExtractor={(item) => `${item.id}`}
         renderItem={ListItem}
-        ItemSeparatorComponent={() => (
-          <View
-            style={{
-              height: StyleSheet.hairlineWidth,
-              backgroundColor: Colors.grey,
-              marginStart: 50,
-            }}
-          />
-        )}
-        refreshControl={<RefreshControl refreshing={refreshing} onRefresh={loadBoards} />}
+        horizontal
+        ItemSeparatorComponent={() => <View style={{ width: 20 }} />}
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={loadBoards} />
+        }
       />
     </View>
   );
@@ -66,6 +159,7 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 16,
     flex: 1,
+    backgroundColor: "#fff",
   },
   list: {
     borderColor: Colors.grey,
@@ -73,10 +167,10 @@ const styles = StyleSheet.create({
     borderBottomWidth: StyleSheet.hairlineWidth,
   },
   listItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     padding: 10,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     gap: 10,
   },
   colorBlock: {
