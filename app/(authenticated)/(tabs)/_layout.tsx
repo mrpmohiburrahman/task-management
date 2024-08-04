@@ -3,7 +3,7 @@ import { Colors } from "@/constants/Colors";
 import { fonts } from "@/constants/Fonts";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
-import { Chat, Home, TwoUsers } from "react-native-iconly";
+import { Chat, Home, Setting, TwoUsers } from "react-native-iconly";
 
 const Layout = () => {
   return (
@@ -56,12 +56,12 @@ const Layout = () => {
       />
 
       <Tabs.Screen
-        name="account"
+        name="settigns"
         options={{
-          title: "Account",
+          title: "Settigns",
           headerTitle: () => <HeaderTitle headerTitle="Setting" />,
-          tabBarIcon: ({ size, color }) => (
-            <FontAwesome name="user-circle" size={size} color={color} />
+          tabBarIcon: ({ focused }) => (
+            <Setting primaryColor={focused ? "#0065FF" : "#828282"} />
           ),
         }}
       />
