@@ -24,6 +24,7 @@ const BigBoardCard = ({ boards, header, containerStyle }: BigBoardCardType) => {
   const ListItem = ({ item }: { item: Board }) => {
     return (
       <Link
+        // @ts-ignore
         href={`/(authenticated)/board/${item.id}?bg=${encodeURIComponent(
           item.background
         )}`}
@@ -50,6 +51,7 @@ const BigBoardCard = ({ boards, header, containerStyle }: BigBoardCardType) => {
               {[0, 1, 2].map((_, index) => (
                 <Image
                   source={{ uri: item.memberInfo[0].avatar_url }}
+                  key={index}
                   style={[
                     {
                       height: 30,
