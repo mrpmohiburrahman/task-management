@@ -1,8 +1,8 @@
 import { Colors } from "@/constants/Colors";
+import { fonts } from "@/constants/Fonts";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import { Image } from "react-native";
+import { Chat, Home } from "react-native-iconly";
 
 const Layout = () => {
   return (
@@ -21,14 +21,14 @@ const Layout = () => {
         options={{
           headerShown: false,
           title: "Boards",
-          tabBarIcon: ({ size, color, focused }) => (
-            <Image
-              style={{ width: size, height: size }}
-              source={
-                focused
-                  ? require("@/assets/images/logo-icon-blue.png")
-                  : require("@/assets/images/logo-icon-neutral.png")
-              }
+          headerTitleStyle: {
+            fontFamily: fonts.Roboto_700Bold,
+            fontSize: 12,
+          },
+          tabBarIcon: ({ focused }) => (
+            <Home
+              primaryColor={focused ? "#0065FF" : "#828282"}
+              filled={true}
             />
           ),
         }}
@@ -37,12 +37,8 @@ const Layout = () => {
         name="my-cards"
         options={{
           title: "My Cards",
-          tabBarIcon: ({ size, color }) => (
-            <MaterialCommunityIcons
-              name="view-dashboard-variant-outline"
-              size={size}
-              color={color}
-            />
+          tabBarIcon: ({ focused }) => (
+            <Chat primaryColor={focused ? "#0065FF" : "#828282"} />
           ),
         }}
       />
