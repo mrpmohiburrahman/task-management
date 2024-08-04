@@ -4,7 +4,7 @@ import { useSupabase } from "@/context/SupabaseContext";
 import { Board } from "@/types/enums";
 import { useFocusEffect } from "expo-router";
 import { useCallback, useState } from "react";
-import { FlatList, ScrollView, View } from "react-native";
+import { FlatList } from "react-native";
 
 const Page = () => {
   const { getBoards, getBoardMember } = useSupabase();

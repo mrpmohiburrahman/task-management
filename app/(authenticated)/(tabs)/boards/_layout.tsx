@@ -1,7 +1,12 @@
+import DropdownPlus from "@/components/DropdownPlus";
+import HeaderTitle from "@/components/HeaderTitle";
+import { Colors } from "@/constants/Colors";
 import { fonts } from "@/constants/Fonts";
 import { Ionicons } from "@expo/vector-icons";
+import { WINDOW_WIDTH } from "@gorhom/bottom-sheet";
 import { Stack, useRouter } from "expo-router";
 import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Notification, Search } from "react-native-iconly";
 
 const Layout = () => {
   const router = useRouter();
@@ -11,43 +16,8 @@ const Layout = () => {
       <Stack.Screen
         name="index"
         options={{
-          headerStyle: {
-            // backgroundColor: Colors.primary,
-          },
-          // headerTitle: () => (
-          //   <Image
-          //     style={{ width: 120, height: 50, resizeMode: "contain" }}
-          //     source={require("@/assets/images/trello-logo-gradient-white.png")}
-          //   />
-          // ),
           headerShadowVisible: true,
-
-          headerTitle: () => (
-            <View
-              style={{
-                flex: 1,
-                // borderWidth: 1
-              }}>
-              <View style={{ flexDirection: "row", alignItems: "center" }}>
-                <Image
-                  style={{
-                    width: 40,
-                    height: 40,
-                    resizeMode: "contain",
-                    transform: [{ rotate: "180deg" }],
-                  }}
-                  source={require("@/assets/images/task-management-blue.png")}
-                />
-                <Text
-                  style={{
-                    fontWeight: "500",
-                    fontFamily: fonts.Roboto_500Medium,
-                  }}>
-                  Boards
-                </Text>
-              </View>
-            </View>
-          ),
+          headerTitle: () => <HeaderTitle headerTitle="Boards" />,
         }}
       />
       <Stack.Screen

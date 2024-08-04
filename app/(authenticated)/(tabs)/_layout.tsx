@@ -1,3 +1,4 @@
+import HeaderTitle from "@/components/HeaderTitle";
 import { Colors } from "@/constants/Colors";
 import { fonts } from "@/constants/Fonts";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
@@ -10,7 +11,7 @@ const Layout = () => {
       screenOptions={{
         tabBarActiveTintColor: Colors.primary,
         headerStyle: {
-          backgroundColor: Colors.primary,
+          // backgroundColor: Colors.primary,
         },
         headerTitleStyle: {
           color: "white",
@@ -37,6 +38,7 @@ const Layout = () => {
         name="workspaces"
         options={{
           title: "Workspaces",
+          headerTitle: () => <HeaderTitle headerTitle="Worskspaces" />,
           tabBarIcon: ({ focused }) => (
             <TwoUsers primaryColor={focused ? "#0065FF" : "#828282"} />
           ),
@@ -46,6 +48,7 @@ const Layout = () => {
         name="my-cards"
         options={{
           title: "My Cards",
+          headerTitle: () => <HeaderTitle headerTitle="My Cards" />,
           tabBarIcon: ({ focused }) => (
             <Chat primaryColor={focused ? "#0065FF" : "#828282"} />
           ),
@@ -56,6 +59,7 @@ const Layout = () => {
         name="account"
         options={{
           title: "Account",
+          headerTitle: () => <HeaderTitle headerTitle="Setting" />,
           tabBarIcon: ({ size, color }) => (
             <FontAwesome name="user-circle" size={size} color={color} />
           ),
