@@ -1,5 +1,6 @@
 import DropdownPlus from "@/components/DropdownPlus";
 import { Colors } from "@/constants/Colors";
+import { fonts } from "@/constants/Fonts";
 import { useSupabase } from "@/context/SupabaseContext";
 import { Board } from "@/types/enums";
 import { MaterialIcons } from "@expo/vector-icons";
@@ -148,11 +149,27 @@ const Page = () => {
       <View
         style={{
           paddingHorizontal: 30,
+          paddingVertical: 10,
           flexDirection: "row",
           justifyContent: "space-between",
+          // borderWidth: 1,
+          alignItems: "center",
         }}>
-        <Text>Favourite</Text>
-        <Text>show all</Text>
+        <View>
+          <Text style={{ fontFamily: fonts.Roboto_500Medium, fontSize: 16 }}>
+            Favourite
+          </Text>
+        </View>
+        <TouchableOpacity>
+          <Text
+            style={{
+              fontFamily: fonts.Roboto_500Medium,
+              fontSize: 10,
+              color: Colors.text_link,
+            }}>
+            show all
+          </Text>
+        </TouchableOpacity>
       </View>
       <FlatList
         contentContainerStyle={
