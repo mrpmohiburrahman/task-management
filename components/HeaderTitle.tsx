@@ -40,23 +40,18 @@ const HeaderTitle = ({ headerTitle }: HeaderTitleTypes) => {
           flexDirection: "row",
           alignItems: "center",
           gap: 20,
-          // borderWidth: 1,
         }}>
-        <TouchableOpacity
-          style={
-            {
-              // borderWidth: 1
-            }
-          }>
+        <TouchableOpacity>
           <Search primaryColor={Colors.grey} size={20} />
         </TouchableOpacity>
-        <TouchableOpacity
-          style={
-            {
-              // borderWidth: 1
-            }
-          }>
+        <TouchableOpacity>
           <Notification primaryColor={Colors.grey} size={20} />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Image
+            source={require("@/assets/images/headshot.jpg")}
+            style={{ height: 30, width: 30, borderRadius: 50 }}
+          />
         </TouchableOpacity>
       </View>
     </View>
