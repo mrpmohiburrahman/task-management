@@ -1,22 +1,9 @@
 import BigBoardCard from "@/components/Board/BigBoardCard";
-import DropdownPlus from "@/components/DropdownPlus";
-import { Colors } from "@/constants/Colors";
-import { fonts } from "@/constants/Fonts";
 import { useSupabase } from "@/context/SupabaseContext";
 import { Board } from "@/types/enums";
-import { MaterialIcons } from "@expo/vector-icons";
-import { WINDOW_HEIGHT } from "@gorhom/bottom-sheet";
-import { Link, Stack, useFocusEffect } from "expo-router";
+import { useFocusEffect } from "expo-router";
 import { useCallback, useState } from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  FlatList,
-  StyleSheet,
-  RefreshControl,
-  Image,
-} from "react-native";
+import { View } from "react-native";
 
 const Page = () => {
   const { getBoards, getBoardMember } = useSupabase();
@@ -56,6 +43,11 @@ const Page = () => {
         }}
       /> */}
       <BigBoardCard boards={boards} header="Favorite" />
+      <BigBoardCard
+        boards={boards}
+        header="Recent"
+        containerStyle={{ paddingTop: 20 }}
+      />
     </View>
   );
 };

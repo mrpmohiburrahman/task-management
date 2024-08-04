@@ -5,6 +5,8 @@ import {
   FlatList,
   Image,
   StyleSheet,
+  StyleProp,
+  ViewStyle,
 } from "react-native";
 import React from "react";
 import { fonts } from "@/constants/Fonts";
@@ -16,10 +18,10 @@ import { WINDOW_HEIGHT } from "@gorhom/bottom-sheet";
 type BigBoardCardType = {
   boards: Board[];
   header?: string;
+  containerStyle?: StyleProp<ViewStyle>;
 };
-const BigBoardCard = ({ boards, header }: BigBoardCardType) => {
+const BigBoardCard = ({ boards, header, containerStyle }: BigBoardCardType) => {
   const ListItem = ({ item }: { item: Board }) => {
-    console.log(`🚀 ~ ListItem ~ item:`, item.background);
     return (
       <Link
         href={`/(authenticated)/board/${item.id}?bg=${encodeURIComponent(
@@ -27,11 +29,9 @@ const BigBoardCard = ({ boards, header }: BigBoardCardType) => {
         )}`}
         style={{
           borderRadius: 16,
-          // backgroundColor: "#FFC6C6",
           backgroundColor: item.background, //"#E6FCFF",
           // borderWidth: 1,
           gap: 10,
-
           width: 300,
         }}
         key={`${item.id}`}
@@ -104,14 +104,14 @@ const BigBoardCard = ({ boards, header }: BigBoardCardType) => {
     );
   };
   return (
-    <>
+    <View style={containerStyle}>
       <View
         style={{
           paddingHorizontal: 30,
           paddingVertical: 10,
           flexDirection: "row",
           justifyContent: "space-between",
-          // borderWidth: 1,
+          //   borderWidth: 1,
           alignItems: "center",
         }}>
         <View>
@@ -133,7 +133,6 @@ const BigBoardCard = ({ boards, header }: BigBoardCardType) => {
       <FlatList
         contentContainerStyle={
           boards.length > 0 && {
-            // borderWidth: 1,
             paddingLeft: 30,
             height: WINDOW_HEIGHT * 0.2,
             backgroundColor: "#fff",
@@ -145,7 +144,7 @@ const BigBoardCard = ({ boards, header }: BigBoardCardType) => {
         horizontal
         ItemSeparatorComponent={() => <View style={{ width: 20 }} />}
       />
-    </>
+    </View>
   );
 };
 
