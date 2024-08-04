@@ -2,7 +2,7 @@ import { Colors } from "@/constants/Colors";
 import { fonts } from "@/constants/Fonts";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
-import { Chat, Home } from "react-native-iconly";
+import { Chat, Home, TwoUsers } from "react-native-iconly";
 
 const Layout = () => {
   return (
@@ -34,6 +34,15 @@ const Layout = () => {
         }}
       />
       <Tabs.Screen
+        name="workspaces"
+        options={{
+          title: "Workspaces",
+          tabBarIcon: ({ focused }) => (
+            <TwoUsers primaryColor={focused ? "#0065FF" : "#828282"} />
+          ),
+        }}
+      />
+      <Tabs.Screen
         name="my-cards"
         options={{
           title: "My Cards",
@@ -42,24 +51,7 @@ const Layout = () => {
           ),
         }}
       />
-      <Tabs.Screen
-        name="search"
-        options={{
-          title: "Search",
-          tabBarIcon: ({ size, color }) => (
-            <Ionicons name="search" size={size} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="notifications"
-        options={{
-          title: "Notifications",
-          tabBarIcon: ({ size, color }) => (
-            <Ionicons name="notifications-outline" size={size} color={color} />
-          ),
-        }}
-      />
+
       <Tabs.Screen
         name="account"
         options={{
