@@ -1,10 +1,11 @@
 import BigBoardCard from "@/components/Board/BigBoardCard";
 import PersonalBoardCard from "@/components/Board/PersonalBoardCard";
+import FloatingButton from "@/components/FloatingButton";
 import { useSupabase } from "@/context/SupabaseContext";
 import { Board } from "@/types/enums";
 import { useFocusEffect } from "expo-router";
 import { useCallback, useState } from "react";
-import { FlatList } from "react-native";
+import { FlatList, View } from "react-native";
 
 const Page = () => {
   const { getBoards, getBoardMember } = useSupabase();
@@ -32,34 +33,37 @@ const Page = () => {
   };
 
   return (
-    <FlatList
-      contentContainerStyle={{
-        backgroundColor: "#fff",
-        paddingBottom: 40,
-      }}
-      style={{ backgroundColor: "#fff" }}
-      data={[0, 1, 2]}
-      renderItem={({ index }) => {
-        if (index === 0)
-          return <BigBoardCard boards={boards} header="Favorite" />;
-        else if (index === 1)
-          return (
-            <BigBoardCard
-              boards={boards}
-              header="Recent"
-              containerStyle={{ paddingTop: 20 }}
-            />
-          );
-        else
-          return (
-            <PersonalBoardCard
-              boards={boards}
-              header="Personal"
-              containerStyle={{ paddingTop: 20 }}
-            />
-          );
-      }}
-    />
+    <View style={{ flex: 1 }}>
+      <FloatingButton />
+      <FlatList
+        contentContainerStyle={{
+          backgroundColor: "#fff",
+          paddingBottom: 40,
+        }}
+        style={{ backgroundColor: "#fff" }}
+        data={[0, 1, 2]}
+        renderItem={({ index }) => {
+          if (index === 0)
+            return <BigBoardCard boards={boards} header="Favorite" />;
+          else if (index === 1)
+            return (
+              <BigBoardCard
+                boards={boards}
+                header="Recent"
+                containerStyle={{ paddingTop: 20 }}
+              />
+            );
+          else
+            return (
+              <PersonalBoardCard
+                boards={boards}
+                header="Personal"
+                containerStyle={{ paddingTop: 20 }}
+              />
+            );
+        }}
+      />
+    </View>
   );
 };
 
