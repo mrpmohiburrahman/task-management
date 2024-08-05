@@ -1,3 +1,7 @@
+import { LogBox } from "react-native";
+
+// Ignore all logs
+LogBox.ignoreAllLogs();
 import { ActionSheetProvider } from "@expo/react-native-action-sheet";
 import { Stack, useRouter, useSegments } from "expo-router";
 import { StatusBar } from "expo-status-bar";
