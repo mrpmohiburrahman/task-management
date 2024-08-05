@@ -1,6 +1,7 @@
 import BigBoardCard from "@/components/Board/BigBoardCard";
 import PersonalBoardCard from "@/components/Board/PersonalBoardCard";
 import FloatingButton from "@/components/FloatingButton";
+// import FloatingButton from "@/components/FloatingButton";
 import { useSupabase } from "@/context/SupabaseContext";
 import { Board } from "@/types/enums";
 import { useFocusEffect } from "expo-router";
