@@ -7,6 +7,7 @@ import {
   StyleSheet,
   StyleProp,
   ViewStyle,
+  Alert,
 } from "react-native";
 import React from "react";
 import { fonts } from "@/constants/Fonts";
@@ -121,7 +122,10 @@ const BigBoardCard = ({ boards, header, containerStyle }: BigBoardCardType) => {
             {header}
           </Text>
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            Alert.alert("WIP: work in progress");
+          }}>
           <Text
             style={{
               fontFamily: fonts.Roboto_500Medium,

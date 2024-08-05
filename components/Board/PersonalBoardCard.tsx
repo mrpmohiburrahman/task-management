@@ -7,6 +7,7 @@ import {
   StyleSheet,
   StyleProp,
   ViewStyle,
+  Alert,
 } from "react-native";
 import React from "react";
 import { fonts } from "@/constants/Fonts";
@@ -132,7 +133,7 @@ const PersonalBoardCard = ({
     <View style={[containerStyle, { paddingHorizontal: 30 }]}>
       <View
         style={{
-          paddingHorizontal: 30,
+          // paddingHorizontal: 10,
           paddingVertical: 10,
           flexDirection: "row",
           justifyContent: "space-between",
@@ -144,7 +145,10 @@ const PersonalBoardCard = ({
             {header}
           </Text>
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            Alert.alert("WIP: work in progress");
+          }}>
           <Text
             style={{
               fontFamily: fonts.Roboto_500Medium,
@@ -157,9 +161,10 @@ const PersonalBoardCard = ({
       </View>
       <FlatList
         contentContainerStyle={
-          boards.length > 0 && {
+          boards.length > 0 &&
+          {
             // borderWidth: 1,
-            paddingHorizontal: 30,
+            // paddingHorizontal: 30,
           }
         }
         data={boards}
