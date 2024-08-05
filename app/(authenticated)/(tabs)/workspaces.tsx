@@ -37,6 +37,7 @@ const Page = () => {
         backgroundColor: "#fff",
         paddingBottom: 40,
       }}
+      style={{ backgroundColor: "#fff" }}
       data={[
         { worskspaceName: "Worskspace 1" },
         { worskspaceName: "Worskspace 2" },

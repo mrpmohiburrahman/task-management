@@ -37,6 +37,7 @@ const Page = () => {
         backgroundColor: "#fff",
         paddingBottom: 40,
       }}
+      style={{ backgroundColor: "#fff" }}
       data={[0, 1, 2]}
       renderItem={({ index }) => {
         if (index === 0)

@@ -38,6 +38,7 @@ const Page = () => {
         paddingBottom: 40,
         flex: 1,
       }}
+      style={{ backgroundColor: "#fff" }}
       data={[{ worskspaceName: "Due Soon" }, { worskspaceName: "Due Later" }]}
       ItemSeparatorComponent={() => <View style={{ height: 30 }} />}
       renderItem={({ item, index }) => {

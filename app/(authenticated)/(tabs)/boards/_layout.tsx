@@ -1,12 +1,7 @@
-import DropdownPlus from "@/components/DropdownPlus";
 import HeaderTitle from "@/components/HeaderTitle";
-import { Colors } from "@/constants/Colors";
-import { fonts } from "@/constants/Fonts";
 import { Ionicons } from "@expo/vector-icons";
-import { WINDOW_WIDTH } from "@gorhom/bottom-sheet";
 import { Stack, useRouter } from "expo-router";
-import { Image, Text, TouchableOpacity, View } from "react-native";
-import { Notification, Search } from "react-native-iconly";
+import { TouchableOpacity } from "react-native";
 
 const Layout = () => {
   const router = useRouter();
