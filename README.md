@@ -1,4 +1,4 @@
-<img align="right" alt="GIF" src="https://raw.githubusercontent.com/mrpmohiburrahman/BootcampApp/master/assets/gifs/bootcamp%20app%20demo_width_256.gif" width="200"/>
+<img align="right" alt="Demo of task-management app" src="https://raw.githubusercontent.com/mrpmohiburrahman/task-management/master/assets/images/task-management-app-demo.gif" width="200"/>
 
 # Task Management App
 
