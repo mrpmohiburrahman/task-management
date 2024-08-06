@@ -1,50 +1,124 @@
-# Welcome to your Expo app 👋
+<!-- <img align="right" alt="GIF" src="https://raw.githubusercontent.com/mrpmohiburrahman/BootcampApp/master/assets/gifs/bootcamp%20app%20demo_width_256.gif" width="200"/> -->
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+# Task Management App
 
-## Get started
+### An app for organizing tasks for your team, just like Trello
 
-1. Install dependencies
+<br/>
 
-   ```bash
-   npm install
-   ```
+- [About](#about)
+- [Used technology](#used-technology)
+- [How to use](#how-to-use)
+- [Screen Shots](#screen-shots)
 
-2. Start the app
+<br/>
+<br/>
 
-   ```bash
-    npx expo start
-   ```
+## About
 
-In the output, you'll find options to open the app in a
+This app is made with react native, supabase as a serverless backend and clerk for authentication
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Used technology
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+<table style="width:600px">
+  <thead align="center">
+   <tr border: none;>
+     <th>Front End</th>
+     <th>Back End</th>
+     <th>Data Base</th>
+   </tr>
+  </thead>
+  <tr>
+    <td>React Native</td>
+    <td>Supabase</td>
+    <td>Postgres</td>
+  </tr>
+  <tr>
+    <td>Typescript</td>
+    <td>Clerk</td>
+    <td>&nbsp</td>
+  </tr>
+  <tr>
+    <td>&nbsp</td>
+    <td>&nbsp</td>
+    <td>&nbsp</td>
+  </tr>
+</table> 
+<br/>
+<br/>
 
-## Get a fresh project
+## How To Use
 
-When you're ready, run:
+To run this application, you'll need the following things installed in your computer:
 
-```bash
-npm run reset-project
+- [Git](https://git-scm.com)
+- [Node.js](https://nodejs.org/en/download/)
+
+You need to run both have [Supabase](https://supabase.com/) project setup and [Clerk](https://clerk.com/).
+
+From Supabase and Clerk you need to fill up the following variables in the ".env" file. please, taka a look at example.env, rename it to ".env" and fill up the variables
+
+```
+EXPO_PUBLIC_SUPABASE_URL=
+EXPO_PUBLIC_SUPABASE_ANON_KEY=
+EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY=
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+From your command line:
 
-## Learn more
+```bash
 
-To learn more about developing your project with Expo, look at the following resources:
+# Clone this repository
+$ git clone git@github.com:mrpmohiburrahman/task-management.git
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+# Go into the repository
+$ cd task-management
 
-## Join the community
+# Install dependencies
+$ npm install
 
-Join our community of developers creating universal apps.
+# Run the app
+$ yarn start
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Screen Shots
+
+[View Demo Video](assets/videos/task-management-app-demo.mp4)
+
+<p align="center">Sign up page</p>  
+ <br />
+ <br />
+ <br />
+<p align="center"><img src="https://raw.githubusercontent.com/mrpmohiburrahman/BootcampApp/master/assets/gifs/signin.gif" alt="SignIn screen" width="300"></p>
+<p align="center">Sign in page</p>
+ <br />
+ <br />
+ <br />
+<p align="center"><img src="https://raw.githubusercontent.com/mrpmohiburrahman/BootcampApp/master/assets/gifs/exporing%20bootcamps%20list%20and%20book%20mark%20tab.gif" alt="exploring bootcamps list and bookmark tab" width="300"></p>
+<p align="center">Bootcamp List and Bookmark Tab</p>
+ <br />
+ <br />
+ <br />
+
+<p align="center"><img src="https://raw.githubusercontent.com/mrpmohiburrahman/BootcampApp/master/assets/gifs/edit%20profile%20and%20create%20bootcamp_edit_200fps.gif" alt="exploring bootcamps list and bookmark tab" width="300"></p>
+<p align="center">Profile page and Create Bootcamp page</p>
+ <br />
+ <br />
+ <br />
+
+<!--
+<p align="center">
+    <a href="https://github.com/mrpmohiburrahman/BootcampApp/commits/master">
+    <img src="https://img.shields.io/github/last-commit/ArmynC/ArminC-AutoExec.svg?style=flat-square&logo=github&logoColor=white"
+         alt="GitHub last commit">
+    <a href="https://github.com/ArmynC/ArminC-AutoExec/issues">
+    <img src="https://img.shields.io/github/issues-raw/ArmynC/ArminC-AutoExec.svg?style=flat-square&logo=github&logoColor=white"
+         alt="GitHub issues">
+    <a href="https://github.com/ArmynC/ArminC-AutoExec/pulls">
+    <img src="https://img.shields.io/github/issues-pr-raw/ArmynC/ArminC-AutoExec.svg?style=flat-square&logo=github&logoColor=white"
+         alt="GitHub pull requests">
+    <a href="https://twitter.com/intent/tweet?text=Try this CS:GO AutoExec:&url=https%3A%2F%2Fgithub.com%2FArmynC%2FArminC-AutoExec">
+    <img src="https://img.shields.io/twitter/url/https/github.com/ArmynC/ArminC-AutoExec.svg?style=flat-square&logo=twitter"
+         alt="GitHub tweet">
+</p>
+-->
