@@ -1,8 +1,4 @@
-<!-- <img align="right" alt="GIF" src="https://raw.githubusercontent.com/mrpmohiburrahman/BootcampApp/master/assets/gifs/bootcamp%20app%20demo_width_256.gif" width="200"/> -->
-
-
-https://github.com/user-attachments/assets/688b2efa-5960-4e8e-a9af-1ce35423c418
-
+<video align="right" alt="GIF" src="https://github.com/user-attachments/assets/688b2efa-5960-4e8e-a9af-1ce35423c418" width="200"/>
 
 # Task Management App
 
@@ -85,45 +81,6 @@ $ npm install
 $ yarn start
 ```
 
-## Screen Shots
+## Video Demo
 
-[View Demo Video]("https://raw.githubusercontent.com/mrpmohiburrahman/task-management/raw/main/assets/videos/task-management-app-demo.mp4")
-
-<p align="center"><video src="https://raw.githubusercontent.com/mrpmohiburrahman/task-management/raw/main/assets/videos/task-management-app-demo.mp4" alt="SignUp screen" width="300"></p>
-<p align="center">Sign up page</p>  
- <br />
- <br />
- <br />
-<p align="center"><img src="https://raw.githubusercontent.com/mrpmohiburrahman/BootcampApp/master/assets/gifs/signin.gif" alt="SignIn screen" width="300"></p>
-<p align="center">Sign in page</p>
- <br />
- <br />
- <br />
-<p align="center"><img src="https://raw.githubusercontent.com/mrpmohiburrahman/BootcampApp/master/assets/gifs/exporing%20bootcamps%20list%20and%20book%20mark%20tab.gif" alt="exploring bootcamps list and bookmark tab" width="300"></p>
-<p align="center">Bootcamp List and Bookmark Tab</p>
- <br />
- <br />
- <br />
-
-<p align="center"><img src="https://raw.githubusercontent.com/mrpmohiburrahman/BootcampApp/master/assets/gifs/edit%20profile%20and%20create%20bootcamp_edit_200fps.gif" alt="exploring bootcamps list and bookmark tab" width="300"></p>
-<p align="center">Profile page and Create Bootcamp page</p>
- <br />
- <br />
- <br />
-
-<!--
-<p align="center">
-    <a href="https://github.com/mrpmohiburrahman/BootcampApp/commits/master">
-    <img src="https://img.shields.io/github/last-commit/ArmynC/ArminC-AutoExec.svg?style=flat-square&logo=github&logoColor=white"
-         alt="GitHub last commit">
-    <a href="https://github.com/ArmynC/ArminC-AutoExec/issues">
-    <img src="https://img.shields.io/github/issues-raw/ArmynC/ArminC-AutoExec.svg?style=flat-square&logo=github&logoColor=white"
-         alt="GitHub issues">
-    <a href="https://github.com/ArmynC/ArminC-AutoExec/pulls">
-    <img src="https://img.shields.io/github/issues-pr-raw/ArmynC/ArminC-AutoExec.svg?style=flat-square&logo=github&logoColor=white"
-         alt="GitHub pull requests">
-    <a href="https://twitter.com/intent/tweet?text=Try this CS:GO AutoExec:&url=https%3A%2F%2Fgithub.com%2FArmynC%2FArminC-AutoExec">
-    <img src="https://img.shields.io/twitter/url/https/github.com/ArmynC/ArminC-AutoExec.svg?style=flat-square&logo=twitter"
-         alt="GitHub tweet">
-</p>
--->
+https://github.com/user-attachments/assets/688b2efa-5960-4e8e-a9af-1ce35423c418
