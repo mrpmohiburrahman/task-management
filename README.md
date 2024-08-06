@@ -83,8 +83,9 @@ $ yarn start
 
 ## Screen Shots
 
-[View Demo Video](assets/videos/task-management-app-demo.mp4)
+[View Demo Video]("https://raw.githubusercontent.com/mrpmohiburrahman/task-management/raw/main/assets/videos/task-management-app-demo.mp4")
 
+<p align="center"><video src="https://raw.githubusercontent.com/mrpmohiburrahman/task-management/raw/main/assets/videos/task-management-app-demo.mp4" alt="SignUp screen" width="300"></p>
 <p align="center">Sign up page</p>  
  <br />
  <br />
