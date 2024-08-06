@@ -1,9 +1,12 @@
-<img align="right" alt="Demo of task-management app" src="https://raw.githubusercontent.com/mrpmohiburrahman/task-management/master/assets/images/task-management-app-demo.gif" width="200"/>
-
 # Task Management App
+
+<img align="right" alt="Demo of task-management app" src="https://raw.githubusercontent.com/mrpmohiburrahman/task-management/master/assets/images/task-management-app-demo.gif" width="200"/>
 
 ### An app for organizing tasks for your team, just like Trello
 
+<br/>
+<br/>
+<br/>
 <br/>
 
 - [About](#about)
@@ -11,6 +14,12 @@
 - [How to use](#how-to-use)
 - [Screen Shots](#screen-shots)
 
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 <br/>
 <br/>
 
